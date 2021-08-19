@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ServiceConfigurationError;
 
-public class PhotoGalleryFragment extends Fragment {
+public class PhotoGalleryFragment extends VisibleFragment {
 
     private static final String TAG = "PhotoGalleryFragment";
 
