@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.function.Predicate;
-
+//Try to insert @SuppressLint("SetJavaScriptEnabled") here
 public class PhotoPageFragment extends  VisibleFragment{
     private static final String ARG_URI = "photo_page_url";
 
