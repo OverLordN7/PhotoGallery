@@ -15,7 +15,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.function.Predicate;
-//Try to insert @SuppressLint("SetJavaScriptEnabled") here
+@SuppressLint("SetJavaScriptEnabled")
 public class PhotoPageFragment extends  VisibleFragment{
     private static final String ARG_URI = "photo_page_url";
 
@@ -38,7 +38,7 @@ public class PhotoPageFragment extends  VisibleFragment{
     }
 
 
-    @SuppressLint("SetJavaScriptEnabled")
+
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_photo_page,container,false);
@@ -50,7 +50,7 @@ public class PhotoPageFragment extends  VisibleFragment{
         mWebView =(WebView) v.findViewById(R.id.web_view);
 
         mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.getSettings().setDomStorageEnabled(true);
+
 
 
 
