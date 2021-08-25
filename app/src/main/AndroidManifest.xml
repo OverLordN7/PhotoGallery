@@ -2,8 +2,16 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="space.oln7.photogallery">
 
+    <permission android:name="space.oln7.photogallery.PRIVATE"
+        android:protectionLevel="signature"/>
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="space.oln7.photogallery.PRIVATE"/>
+
+
+
 
     <application
         android:allowBackup="true"
@@ -12,6 +20,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PhotoGallery">
+
+
+
+
         <activity
             android:name=".PhotoGalleryActivity"
             android:exported="true">
@@ -22,7 +34,25 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".PhotoPageActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+
         <service android:name=".PollService"/>
+
+
+        <receiver android:name=".StartupReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="space.oln7.photogallery.SHOW_NOTIFICATION"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
